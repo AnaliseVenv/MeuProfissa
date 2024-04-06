@@ -19,5 +19,9 @@
     "platforms": [
       "android"
     ]
+  },
+  "dependencies": {
+    "firebase": "^10.10.0",
+    "firebaseui": "^6.1.0"
   }
 }
