@@ -24,18 +24,25 @@ const analytics = getAnalytics(app);
 
 const email = document.getElementById('email').value;
 const password = document.getElementById('password').value;
+const auth = getAuth(app);
 
-// Initialize Firebase Authentication and get a reference to the service
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+const submit = document.getElementById('submit');
 
-const submit = getAuth();
-signInWithEmailAndPassword(auth, email, password)
+submit.addEventListener('click', function(event){
+  alert("Criando conta.")
+  event.preventDefault()
+  createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
-    // Signed in 
+    // Signed up 
     const user = userCredential.user;
+    alert("Criando conta.")
     // ...
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-  });
+    alert(errorMessage)
+    // ..
+});
+
+})
